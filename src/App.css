@@ -17,7 +17,7 @@ body,
   background-color: #f0f5fa;
   height: 100vh;
   width: 100vw;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 152px 1fr;
   grid-template-rows: 96px 1fr;
 }
 

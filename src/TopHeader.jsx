@@ -1,3 +1,4 @@
+import "./TopHeader.css";
 import MainPropic from "./MainPropic";
 
 export default function TopHeader() {
@@ -6,7 +7,9 @@ export default function TopHeader() {
       <div className="header-left">
         <img src="src/assets/title-header.svg" alt="Cohort Manager" />
       </div>
-      <MainPropic />
+      <div className="header-right">
+        <MainPropic />
+      </div>
     </header>
   );
 }

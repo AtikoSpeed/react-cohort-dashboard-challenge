@@ -1,7 +1,11 @@
+import "./Sidebar.css";
+import NavButton from "./NavButton";
+
 export default function Sidebar() {
   return (
-    <aside>
-      <h2>Hi</h2>
-    </aside>
+    <nav>
+      <NavButton buttonType={"Home"} selected={true} />
+      <NavButton buttonType={"Profile"} />
+    </nav>
   );
 }

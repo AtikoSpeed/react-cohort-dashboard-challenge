@@ -2,14 +2,14 @@
 import "./App.css";
 import TopHeader from "./TopHeader";
 import Sidebar from "./Sidebar";
+import Content from "./Content";
 
-function App() {
+export default function App() {
   return (
     <>
       <TopHeader />
       <Sidebar />
+      <Content />
     </>
   );
 }
-
-export default App;

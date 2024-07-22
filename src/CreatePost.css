@@ -1,0 +1,36 @@
+.post-box {
+  background-color: white;
+  display: grid;
+  justify-content: space-between;
+  margin: 24px;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px;
+  border-color: #e6ebf5;
+  border-style: solid;
+  grid-template-rows: 1fr;
+  grid-template-columns: min-content 1fr 200px;
+}
+
+.post-box input {
+  background-color: #e6ebf5;
+
+  border: 0;
+  border-radius: 8px;
+  margin: 0 24px 0 8px;
+  padding: 12px;
+  font-size: larger;
+  font-weight: bold;
+}
+
+::placeholder {
+  color: #64648c;
+  opacity: 80%;
+}
+
+.post-box button {
+  border-radius: 8px;
+  color: white;
+  background-color: #000046;
+  font-size: larger;
+}

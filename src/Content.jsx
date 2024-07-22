@@ -1,7 +1,9 @@
-export default function Content(props) {
+import "./Content.css";
+import CreatePost from "./CreatePost";
+export default function Content() {
   return (
     <main>
-      <h3>MAIN</h3>
+      <CreatePost />
     </main>
   );
 }

@@ -2,6 +2,9 @@ nav {
   background-color: white;
   grid-row: 2;
   grid-column: auto;
+  border: 1px;
+  border-color: #e6ebf5;
+  border-style: solid;
 }
 
 .nav-button {

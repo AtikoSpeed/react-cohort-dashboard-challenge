@@ -1,5 +1,5 @@
-import "./MainPropic.css";
+import Propic from "./Propic.jsx";
 
 export default function MainPropic() {
-  return <h3 className="main-profile-picture">AW</h3>;
+  return <Propic initials={"AW"} />;
 }

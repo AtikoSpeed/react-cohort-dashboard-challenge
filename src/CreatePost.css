@@ -3,6 +3,7 @@
   display: grid;
   justify-content: space-between;
   margin: 24px;
+  margin-bottom: 12px;
   padding: 24px;
   border-radius: 8px;
   border: 1px;
@@ -14,10 +15,9 @@
 
 .post-box input {
   background-color: #e6ebf5;
-
   border: 0;
   border-radius: 8px;
-  margin: 0 24px 0 8px;
+  margin: 0 18px 0 8px;
   padding: 12px;
   font-size: larger;
   font-weight: bold;

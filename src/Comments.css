@@ -7,8 +7,20 @@
 
 .comment-text {
   grid-column: 2;
-  display: flex;
+  display: grid;
   margin: 0 1rem;
   padding: 0 1rem;
   align-items: center;
+  max-width: 70vw;
+  background-color: #e6ebf5;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.comment-text p {
+  font-size: 1.2rem;
+}
+
+.comment-text h4 {
+  font-size: 1.1rem;
 }

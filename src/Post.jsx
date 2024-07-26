@@ -1,29 +1,33 @@
+import { useContext } from "react";
 import "./Post.css";
 import Propic from "./Propic";
-// import Comments from "./Comments";
 import AddComment from "./AddComment";
 import Comments from "./Comments";
+import { Context } from "./App";
 
-export default function Post({ posterName, postTitle, postText, comments }) {
-  const colors = ["#5ABEDC", "#46DCD2", "#A0E6AA", "#46C8FA", "#82E6E6"];
+export default function Post({ posterId, postTitle, postText, postId }) {
+  const [currentUser, contacts] = useContext(Context);
+  let currentContact = {};
 
-  let initialOne = posterName.charAt(0);
-  let initialTwo = posterName.charAt(posterName.search(" ") + 1);
-  let initials = initialOne.concat(initialTwo);
+  if (posterId == 0) {
+    currentContact = currentUser;
+  } else {
+    currentContact = contacts.find((target) => target.id === posterId);
+  }
+
   return (
     <div className="post">
-      <Propic
-        initials={initials}
-        bgColor={colors[Math.floor(Math.random() * 5)]}
-      />
+      <Propic contact={currentContact} />
       <div className="name-and-title">
-        <h3>{posterName}</h3>
+        <h3>
+          {currentContact.firstName} {currentContact.lastName}
+        </h3>
         <h4>{postTitle}</h4>
       </div>
       <div className="post-text">
         <p>{postText}</p>
       </div>
-      {comments ? <Comments comments={comments} /> : ""}
+      <Comments postId={postId} />
       <AddComment />
     </div>
   );

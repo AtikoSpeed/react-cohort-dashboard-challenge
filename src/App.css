@@ -19,4 +19,9 @@ body,
   width: 100vw;
   grid-template-columns: 152px 1fr;
   grid-template-rows: 96px 1fr;
+  overflow: hidden;
+}
+
+main {
+  overflow: auto;
 }

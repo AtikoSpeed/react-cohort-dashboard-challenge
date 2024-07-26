@@ -1,18 +1,34 @@
-import Propic from "./Propic";
 import "./Comments.css";
+import { useEffect, useState } from "react";
 
-export default function Comments() {
-  return (
-    <div className="comments">
-      <Propic initials="PH" />
-      <div className="comment-text">
-        <h4>Place Holder</h4>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius eligendi
-          magni illo tempora fugiat exercitationem dolore corrupti quis? Illo,
-          aliquam.
-        </p>
+import Comment from "./Comment";
+
+export default function Comments({ postId }) {
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      `https://boolean-uk-api-server.fly.dev/AtikoSpeed/post/${postId}/comment`
+    )
+      .then((response) => response.json())
+      .then(setComments);
+  }, [postId]);
+
+  console.log(comments);
+
+  if (comments.length > 1) {
+    return (
+      <div className="comments">
+        {comments.map((comment) => {
+          return (
+            <Comment
+              key={comment.id}
+              commentText={comment.content}
+              commenterId={comment.contactId}
+            />
+          );
+        })}
       </div>
-    </div>
-  );
+    );
+  }
 }

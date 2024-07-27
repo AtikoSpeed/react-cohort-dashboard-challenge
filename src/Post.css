@@ -28,13 +28,6 @@
   opacity: 80%;
 }
 
-.post button {
-  border-radius: 8px;
-  color: white;
-  background-color: #000046;
-  font-size: larger;
-}
-
 .name-and-title {
   display: grid;
   grid-template-rows: 1fr 1fr;

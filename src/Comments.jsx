@@ -1,10 +1,11 @@
 import "./Comments.css";
-import { useEffect, useState } from "react";
-
+import { useContext, useEffect, useState } from "react";
 import Comment from "./Comment";
+import { NewCommentContext } from "./Post";
 
 export default function Comments({ postId }) {
   const [comments, setComments] = useState([]);
+  const [isNewComment] = useContext(NewCommentContext);
 
   useEffect(() => {
     fetch(
@@ -12,11 +13,11 @@ export default function Comments({ postId }) {
     )
       .then((response) => response.json())
       .then(setComments);
-  }, [postId]);
+  }, [isNewComment]);
 
   console.log(comments);
 
-  if (comments.length > 1) {
+  if (comments.length > 0) {
     return (
       <div className="comments">
         {comments.map((comment) => {

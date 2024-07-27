@@ -1,12 +1,15 @@
-import { useContext } from "react";
+import { useContext, createContext, useState } from "react";
 import "./Post.css";
 import Propic from "./Propic";
 import AddComment from "./AddComment";
 import Comments from "./Comments";
 import { Context } from "./App";
+export const NewCommentContext = createContext();
 
 export default function Post({ posterId, postTitle, postText, postId }) {
+  const [isNewComment, setNewComment] = useState(false);
   const [currentUser, contacts] = useContext(Context);
+
   let currentContact = {};
 
   if (posterId == 0) {
@@ -27,8 +30,10 @@ export default function Post({ posterId, postTitle, postText, postId }) {
       <div className="post-text">
         <p>{postText}</p>
       </div>
-      <Comments postId={postId} />
-      <AddComment />
+      <NewCommentContext.Provider value={[isNewComment, setNewComment]}>
+        <Comments postId={postId} />
+        <AddComment postId={postId} />
+      </NewCommentContext.Provider>
     </div>
   );
 }

@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, createContext } from "react";
 import "./App.css";
 import TopHeader from "./TopHeader";
 import Sidebar from "./Sidebar";
 import Content from "./Content";
-export const Context = React.createContext();
+export const Context = createContext();
+export const NewPostContext = createContext();
 
 export default function App() {
   const [contacts, setContacts] = useState([]);
@@ -13,6 +14,7 @@ export default function App() {
     favouriteColour: "#b0f000",
     id: "0",
   });
+  const [isNewPost, setNewPost] = useState(false);
 
   useEffect(() => {
     fetch("https://boolean-uk-api-server.fly.dev/AtikoSpeed/contact")
@@ -26,7 +28,9 @@ export default function App() {
         <Context.Provider value={[currentUser, contacts]}>
           <TopHeader />
           <Sidebar />
-          <Content />
+          <NewPostContext.Provider value={[isNewPost, setNewPost]}>
+            <Content />
+          </NewPostContext.Provider>
         </Context.Provider>
       </>
     );

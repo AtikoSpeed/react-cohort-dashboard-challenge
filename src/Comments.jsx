@@ -15,8 +15,6 @@ export default function Comments({ postId }) {
       .then(setComments);
   }, [isNewComment]);
 
-  console.log(comments);
-
   if (comments.length > 0) {
     return (
       <div className="comments">

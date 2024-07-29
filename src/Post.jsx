@@ -4,6 +4,8 @@ import Propic from "./Propic";
 import AddComment from "./AddComment";
 import Comments from "./Comments";
 import { Context } from "./App";
+import { Link } from "react-router-dom";
+
 export const NewCommentContext = createContext();
 
 export default function Post({ posterId, postTitle, postText, postId }) {
@@ -25,7 +27,9 @@ export default function Post({ posterId, postTitle, postText, postId }) {
         <h3>
           {currentContact.firstName} {currentContact.lastName}
         </h3>
-        <h4>{postTitle}</h4>
+        <Link to={`/post/${postId}`}>
+          <h4>{postTitle}</h4>
+        </Link>
       </div>
       <div className="post-text">
         <p>{postText}</p>

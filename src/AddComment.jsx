@@ -50,7 +50,7 @@ export default function AddComment({ postId }) {
         />
         <button type="submit" className="comment-button-container">
           <img
-            src="src/assets/send.svg"
+            src="/src/assets/send.svg"
             alt="Send"
             className="comment-button"
           />

@@ -3,6 +3,9 @@ import "./App.css";
 import TopHeader from "./TopHeader";
 import Sidebar from "./Sidebar";
 import Content from "./Content";
+import { Routes, Route } from "react-router-dom";
+import SinglePost from "./SinglePost";
+
 export const Context = createContext();
 export const NewPostContext = createContext();
 
@@ -29,7 +32,10 @@ export default function App() {
           <TopHeader />
           <Sidebar />
           <NewPostContext.Provider value={[isNewPost, setNewPost]}>
-            <Content />
+            <Routes>
+              <Route path="/" element={<Content />} />
+              <Route path="/post/:id" element={<SinglePost />} />
+            </Routes>
           </NewPostContext.Provider>
         </Context.Provider>
       </>

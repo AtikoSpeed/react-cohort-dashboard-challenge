@@ -41,7 +41,7 @@ npm run dev
 - React
 - HTML
 - CSS
-- API communication using Fetch or Axios
+- RESTful API communication
 
 ## Purpose
 
